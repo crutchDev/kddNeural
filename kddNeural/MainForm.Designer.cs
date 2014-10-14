@@ -28,217 +28,246 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.loadTestFileButton = new System.Windows.Forms.Button();
+            this.simpleRadioButton = new System.Windows.Forms.RadioButton();
+            this.mediumRadioButton = new System.Windows.Forms.RadioButton();
+            this.allTypesRadioButton = new System.Windows.Forms.RadioButton();
+            this.startLearningButton = new System.Windows.Forms.Button();
+            this.testButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.loadLearnFileButton = new System.Windows.Forms.Button();
+            this.fromLineTextBox = new System.Windows.Forms.TextBox();
+            this.toLineTextBox = new System.Windows.Forms.TextBox();
+            this.fromLineLabel = new System.Windows.Forms.Label();
+            this.toLineLabel = new System.Windows.Forms.Label();
+            this.resultLabel = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.testLineTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // loadTestFileButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(25, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 98);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Load(For Analyze)";
-            this.button1.UseVisualStyleBackColor = false;
+            this.loadTestFileButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.loadTestFileButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.loadTestFileButton.FlatAppearance.BorderSize = 2;
+            this.loadTestFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadTestFileButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loadTestFileButton.Location = new System.Drawing.Point(331, 92);
+            this.loadTestFileButton.Name = "loadTestFileButton";
+            this.loadTestFileButton.Size = new System.Drawing.Size(137, 26);
+            this.loadTestFileButton.TabIndex = 0;
+            this.loadTestFileButton.Text = "Load test file";
+            this.loadTestFileButton.UseVisualStyleBackColor = false;
             // 
-            // radioButton1
+            // simpleRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.radioButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.radioButton1.FlatAppearance.BorderSize = 2;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(25, 198);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 23);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Simple";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.simpleRadioButton.AutoSize = true;
+            this.simpleRadioButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.simpleRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.simpleRadioButton.FlatAppearance.BorderSize = 2;
+            this.simpleRadioButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.simpleRadioButton.Location = new System.Drawing.Point(12, 72);
+            this.simpleRadioButton.Name = "simpleRadioButton";
+            this.simpleRadioButton.Size = new System.Drawing.Size(205, 23);
+            this.simpleRadioButton.TabIndex = 1;
+            this.simpleRadioButton.TabStop = true;
+            this.simpleRadioButton.Text = "2 types (normal\\not normal)";
+            this.simpleRadioButton.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // mediumRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.radioButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.radioButton2.FlatAppearance.BorderSize = 2;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(25, 227);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 23);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Medium";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.mediumRadioButton.AutoSize = true;
+            this.mediumRadioButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.mediumRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mediumRadioButton.FlatAppearance.BorderSize = 2;
+            this.mediumRadioButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mediumRadioButton.Location = new System.Drawing.Point(12, 101);
+            this.mediumRadioButton.Name = "mediumRadioButton";
+            this.mediumRadioButton.Size = new System.Drawing.Size(188, 23);
+            this.mediumRadioButton.TabIndex = 2;
+            this.mediumRadioButton.TabStop = true;
+            this.mediumRadioButton.Text = "Generic types of hazards";
+            this.mediumRadioButton.UseVisualStyleBackColor = false;
             // 
-            // radioButton3
+            // allTypesRadioButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.radioButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.radioButton3.FlatAppearance.BorderSize = 2;
-            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton3.Location = new System.Drawing.Point(25, 256);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(57, 23);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Hard";
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.allTypesRadioButton.AutoSize = true;
+            this.allTypesRadioButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.allTypesRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.allTypesRadioButton.FlatAppearance.BorderSize = 2;
+            this.allTypesRadioButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.allTypesRadioButton.Location = new System.Drawing.Point(12, 130);
+            this.allTypesRadioButton.Name = "allTypesRadioButton";
+            this.allTypesRadioButton.Size = new System.Drawing.Size(159, 23);
+            this.allTypesRadioButton.TabIndex = 3;
+            this.allTypesRadioButton.TabStop = true;
+            this.allTypesRadioButton.Text = "All types of hazards";
+            this.allTypesRadioButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // startLearningButton
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(270, 244);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Learn";
-            this.button2.UseVisualStyleBackColor = false;
+            this.startLearningButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.startLearningButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.startLearningButton.FlatAppearance.BorderSize = 2;
+            this.startLearningButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startLearningButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.startLearningButton.Location = new System.Drawing.Point(122, 193);
+            this.startLearningButton.Name = "startLearningButton";
+            this.startLearningButton.Size = new System.Drawing.Size(78, 31);
+            this.startLearningButton.TabIndex = 4;
+            this.startLearningButton.Text = "Learn";
+            this.startLearningButton.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // testButton
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(351, 244);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 35);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Test";
-            this.button3.UseVisualStyleBackColor = false;
+            this.testButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.testButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.testButton.FlatAppearance.BorderSize = 2;
+            this.testButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.testButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.testButton.Location = new System.Drawing.Point(474, 92);
+            this.testButton.Name = "testButton";
+            this.testButton.Size = new System.Drawing.Size(74, 26);
+            this.testButton.TabIndex = 5;
+            this.testButton.Text = "Test";
+            this.testButton.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // cancelButton
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(432, 244);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 35);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Cancel";
-            this.button4.UseVisualStyleBackColor = false;
+            this.cancelButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cancelButton.FlatAppearance.BorderSize = 2;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelButton.Location = new System.Drawing.Point(206, 193);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 31);
+            this.cancelButton.TabIndex = 6;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.textBox1.Location = new System.Drawing.Point(270, 210);
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(333, 66);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(237, 20);
             this.textBox1.TabIndex = 7;
             // 
-            // button5
+            // loadLearnFileButton
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(174, 210);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 69);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Load(for learning)";
-            this.button5.UseVisualStyleBackColor = false;
+            this.loadLearnFileButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.loadLearnFileButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.loadLearnFileButton.FlatAppearance.BorderSize = 2;
+            this.loadLearnFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadLearnFileButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loadLearnFileButton.Location = new System.Drawing.Point(12, 193);
+            this.loadLearnFileButton.Name = "loadLearnFileButton";
+            this.loadLearnFileButton.Size = new System.Drawing.Size(102, 31);
+            this.loadLearnFileButton.TabIndex = 8;
+            this.loadLearnFileButton.Text = "Load learn file";
+            this.loadLearnFileButton.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // fromLineTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.textBox2.Location = new System.Drawing.Point(210, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(297, 20);
-            this.textBox2.TabIndex = 9;
+            this.fromLineTextBox.BackColor = System.Drawing.Color.White;
+            this.fromLineTextBox.Location = new System.Drawing.Point(101, 9);
+            this.fromLineTextBox.Name = "fromLineTextBox";
+            this.fromLineTextBox.Size = new System.Drawing.Size(59, 20);
+            this.fromLineTextBox.TabIndex = 9;
             // 
-            // textBox3
+            // toLineTextBox
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.textBox3.Location = new System.Drawing.Point(210, 63);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(297, 20);
-            this.textBox3.TabIndex = 10;
+            this.toLineTextBox.BackColor = System.Drawing.Color.White;
+            this.toLineTextBox.Location = new System.Drawing.Point(101, 46);
+            this.toLineTextBox.Name = "toLineTextBox";
+            this.toLineTextBox.Size = new System.Drawing.Size(59, 20);
+            this.toLineTextBox.TabIndex = 10;
             // 
-            // label1
+            // fromLineLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(529, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 19);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "From";
+            this.fromLineLabel.AutoSize = true;
+            this.fromLineLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.fromLineLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fromLineLabel.Location = new System.Drawing.Point(21, 9);
+            this.fromLineLabel.Name = "fromLineLabel";
+            this.fromLineLabel.Size = new System.Drawing.Size(74, 19);
+            this.fromLineLabel.TabIndex = 11;
+            this.fromLineLabel.Text = "From line:";
             // 
-            // label2
+            // toLineLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(529, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "To";
+            this.toLineLabel.AutoSize = true;
+            this.toLineLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.toLineLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toLineLabel.Location = new System.Drawing.Point(70, 47);
+            this.toLineLabel.Name = "toLineLabel";
+            this.toLineLabel.Size = new System.Drawing.Size(25, 19);
+            this.toLineLabel.TabIndex = 12;
+            this.toLineLabel.Text = "To";
+            // 
+            // resultLabel
+            // 
+            this.resultLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.resultLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.resultLabel.Location = new System.Drawing.Point(330, 31);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(240, 23);
+            this.resultLabel.TabIndex = 13;
+            this.resultLabel.Text = "Result:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(12, 167);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(269, 20);
+            this.textBox4.TabIndex = 14;
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(207, 106);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(329, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(300, 77);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Result...";
+            this.label3.Size = new System.Drawing.Size(71, 19);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Test line:";
+            // 
+            // testLineTextBox
+            // 
+            this.testLineTextBox.BackColor = System.Drawing.Color.White;
+            this.testLineTextBox.Location = new System.Drawing.Point(409, 8);
+            this.testLineTextBox.Name = "testLineTextBox";
+            this.testLineTextBox.Size = new System.Drawing.Size(59, 20);
+            this.testLineTextBox.TabIndex = 15;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.BackgroundImage = global::kddNeural.Properties.Resources.n5;
-            this.ClientSize = new System.Drawing.Size(645, 299);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(635, 250);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.testLineTextBox);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.resultLabel);
+            this.Controls.Add(this.toLineLabel);
+            this.Controls.Add(this.fromLineLabel);
+            this.Controls.Add(this.toLineTextBox);
+            this.Controls.Add(this.fromLineTextBox);
+            this.Controls.Add(this.loadLearnFileButton);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.testButton);
+            this.Controls.Add(this.startLearningButton);
+            this.Controls.Add(this.allTypesRadioButton);
+            this.Controls.Add(this.mediumRadioButton);
+            this.Controls.Add(this.simpleRadioButton);
+            this.Controls.Add(this.loadTestFileButton);
             this.Name = "MainForm";
             this.Text = "KDD Analyzer";
             this.ResumeLayout(false);
@@ -248,20 +277,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button loadTestFileButton;
+        private System.Windows.Forms.RadioButton simpleRadioButton;
+        private System.Windows.Forms.RadioButton mediumRadioButton;
+        private System.Windows.Forms.RadioButton allTypesRadioButton;
+        private System.Windows.Forms.Button startLearningButton;
+        private System.Windows.Forms.Button testButton;
+        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button loadLearnFileButton;
+        private System.Windows.Forms.TextBox fromLineTextBox;
+        private System.Windows.Forms.TextBox toLineTextBox;
+        private System.Windows.Forms.Label fromLineLabel;
+        private System.Windows.Forms.Label toLineLabel;
+        private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox testLineTextBox;
     }
 }
 
