@@ -43,21 +43,21 @@
             this.toLineLabel = new System.Windows.Forms.Label();
             this.resultLabel = new System.Windows.Forms.Label();
             this.learnFileTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.testLineLabel = new System.Windows.Forms.Label();
             this.testLineTextBox = new System.Windows.Forms.TextBox();
             this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // loadTestFileButton
             // 
-            this.loadTestFileButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.loadTestFileButton.BackColor = System.Drawing.SystemColors.Window;
             this.loadTestFileButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.loadTestFileButton.FlatAppearance.BorderSize = 2;
-            this.loadTestFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadTestFileButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loadTestFileButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.loadTestFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.loadTestFileButton.Location = new System.Drawing.Point(331, 92);
             this.loadTestFileButton.Name = "loadTestFileButton";
-            this.loadTestFileButton.Size = new System.Drawing.Size(137, 26);
+            this.loadTestFileButton.Size = new System.Drawing.Size(137, 31);
             this.loadTestFileButton.TabIndex = 0;
             this.loadTestFileButton.Text = "Load test file";
             this.loadTestFileButton.UseVisualStyleBackColor = false;
@@ -66,13 +66,13 @@
             // twoTypesRadioButton
             // 
             this.twoTypesRadioButton.AutoSize = true;
-            this.twoTypesRadioButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.twoTypesRadioButton.BackColor = System.Drawing.SystemColors.Control;
             this.twoTypesRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.twoTypesRadioButton.FlatAppearance.BorderSize = 2;
-            this.twoTypesRadioButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.twoTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.twoTypesRadioButton.Location = new System.Drawing.Point(12, 72);
             this.twoTypesRadioButton.Name = "twoTypesRadioButton";
-            this.twoTypesRadioButton.Size = new System.Drawing.Size(205, 23);
+            this.twoTypesRadioButton.Size = new System.Drawing.Size(175, 19);
             this.twoTypesRadioButton.TabIndex = 1;
             this.twoTypesRadioButton.TabStop = true;
             this.twoTypesRadioButton.Text = "2 types (normal\\not normal)";
@@ -81,13 +81,13 @@
             // generalTypesRadioButton
             // 
             this.generalTypesRadioButton.AutoSize = true;
-            this.generalTypesRadioButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.generalTypesRadioButton.BackColor = System.Drawing.SystemColors.Control;
             this.generalTypesRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.generalTypesRadioButton.FlatAppearance.BorderSize = 2;
-            this.generalTypesRadioButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.generalTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.generalTypesRadioButton.Location = new System.Drawing.Point(12, 101);
             this.generalTypesRadioButton.Name = "generalTypesRadioButton";
-            this.generalTypesRadioButton.Size = new System.Drawing.Size(188, 23);
+            this.generalTypesRadioButton.Size = new System.Drawing.Size(159, 19);
             this.generalTypesRadioButton.TabIndex = 2;
             this.generalTypesRadioButton.TabStop = true;
             this.generalTypesRadioButton.Text = "Generic types of hazards";
@@ -96,13 +96,13 @@
             // allTypesRadioButton
             // 
             this.allTypesRadioButton.AutoSize = true;
-            this.allTypesRadioButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.allTypesRadioButton.BackColor = System.Drawing.SystemColors.Control;
             this.allTypesRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.allTypesRadioButton.FlatAppearance.BorderSize = 2;
-            this.allTypesRadioButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.allTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.allTypesRadioButton.Location = new System.Drawing.Point(12, 130);
             this.allTypesRadioButton.Name = "allTypesRadioButton";
-            this.allTypesRadioButton.Size = new System.Drawing.Size(159, 23);
+            this.allTypesRadioButton.Size = new System.Drawing.Size(129, 19);
             this.allTypesRadioButton.TabIndex = 3;
             this.allTypesRadioButton.TabStop = true;
             this.allTypesRadioButton.Text = "All types of hazards";
@@ -110,11 +110,11 @@
             // 
             // startLearningButton
             // 
-            this.startLearningButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.startLearningButton.BackColor = System.Drawing.SystemColors.Window;
             this.startLearningButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.startLearningButton.FlatAppearance.BorderSize = 2;
-            this.startLearningButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startLearningButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.startLearningButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.startLearningButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.startLearningButton.Location = new System.Drawing.Point(122, 193);
             this.startLearningButton.Name = "startLearningButton";
             this.startLearningButton.Size = new System.Drawing.Size(78, 31);
@@ -125,14 +125,14 @@
             // 
             // testButton
             // 
-            this.testButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.testButton.BackColor = System.Drawing.SystemColors.Window;
             this.testButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.testButton.FlatAppearance.BorderSize = 2;
-            this.testButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.testButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.testButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.testButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.testButton.Location = new System.Drawing.Point(474, 92);
             this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(74, 26);
+            this.testButton.Size = new System.Drawing.Size(74, 31);
             this.testButton.TabIndex = 5;
             this.testButton.Text = "Test";
             this.testButton.UseVisualStyleBackColor = false;
@@ -140,11 +140,11 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cancelButton.BackColor = System.Drawing.SystemColors.Window;
             this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cancelButton.FlatAppearance.BorderSize = 2;
-            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButton.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelButton.Location = new System.Drawing.Point(206, 193);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 31);
@@ -163,11 +163,11 @@
             // 
             // loadLearnFileButton
             // 
-            this.loadLearnFileButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.loadLearnFileButton.BackColor = System.Drawing.SystemColors.Window;
             this.loadLearnFileButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.loadLearnFileButton.FlatAppearance.BorderSize = 2;
-            this.loadLearnFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadLearnFileButton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.loadLearnFileButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.loadLearnFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.loadLearnFileButton.Location = new System.Drawing.Point(12, 193);
             this.loadLearnFileButton.Name = "loadLearnFileButton";
             this.loadLearnFileButton.Size = new System.Drawing.Size(102, 31);
@@ -195,30 +195,30 @@
             // fromLineLabel
             // 
             this.fromLineLabel.AutoSize = true;
-            this.fromLineLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.fromLineLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fromLineLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.fromLineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fromLineLabel.Location = new System.Drawing.Point(54, 9);
             this.fromLineLabel.Name = "fromLineLabel";
-            this.fromLineLabel.Size = new System.Drawing.Size(74, 19);
+            this.fromLineLabel.Size = new System.Drawing.Size(62, 15);
             this.fromLineLabel.TabIndex = 11;
             this.fromLineLabel.Text = "From line:";
             // 
             // toLineLabel
             // 
             this.toLineLabel.AutoSize = true;
-            this.toLineLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.toLineLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toLineLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.toLineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toLineLabel.Location = new System.Drawing.Point(12, 47);
             this.toLineLabel.Name = "toLineLabel";
-            this.toLineLabel.Size = new System.Drawing.Size(116, 19);
+            this.toLineLabel.Size = new System.Drawing.Size(94, 15);
             this.toLineLabel.TabIndex = 12;
             this.toLineLabel.Text = "Amount of lines:";
             // 
             // resultLabel
             // 
-            this.resultLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.resultLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.resultLabel.Location = new System.Drawing.Point(330, 31);
+            this.resultLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.resultLabel.Location = new System.Drawing.Point(330, 40);
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(240, 23);
             this.resultLabel.TabIndex = 13;
@@ -232,16 +232,16 @@
             this.learnFileTextBox.Size = new System.Drawing.Size(269, 20);
             this.learnFileTextBox.TabIndex = 14;
             // 
-            // label3
+            // testLineLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(329, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 19);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Test line:";
+            this.testLineLabel.AutoSize = true;
+            this.testLineLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.testLineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.testLineLabel.Location = new System.Drawing.Point(330, 8);
+            this.testLineLabel.Name = "testLineLabel";
+            this.testLineLabel.Size = new System.Drawing.Size(56, 15);
+            this.testLineLabel.TabIndex = 16;
+            this.testLineLabel.Text = "Test line:";
             // 
             // testLineTextBox
             // 
@@ -259,9 +259,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(635, 250);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.testLineLabel);
             this.Controls.Add(this.testLineTextBox);
             this.Controls.Add(this.learnFileTextBox);
             this.Controls.Add(this.resultLabel);
@@ -278,6 +278,7 @@
             this.Controls.Add(this.generalTypesRadioButton);
             this.Controls.Add(this.twoTypesRadioButton);
             this.Controls.Add(this.loadTestFileButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "KDD Analyzer";
             this.ResumeLayout(false);
@@ -302,7 +303,7 @@
         private System.Windows.Forms.Label toLineLabel;
         private System.Windows.Forms.Label resultLabel;
         private System.Windows.Forms.TextBox learnFileTextBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label testLineLabel;
         private System.Windows.Forms.TextBox testLineTextBox;
         private System.Windows.Forms.OpenFileDialog _openFileDialog;
     }

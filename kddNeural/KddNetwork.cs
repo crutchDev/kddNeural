@@ -1,6 +1,8 @@
-﻿using  System;
+﻿using System;
+using System.Deployment.Application;
 using System.Security.Cryptography.X509Certificates;
-using  AForge.Neuro;
+using System.Threading;
+using AForge.Neuro;
 
 namespace kddNeural
 {
@@ -20,6 +22,7 @@ namespace kddNeural
         public void StartLearning()
         {
             Active = true;
+            var t = new Thread(learnThreadProcedure);
             throw new NotImplementedException();
         }
 
@@ -28,9 +31,14 @@ namespace kddNeural
             throw new NotImplementedException();
         }
 
-        internal void TestInput(long testLine, string filePath)
+        public void TestInput(long testLine, string filePath)
         {
             throw new NotImplementedException();
+        }
+
+        private void learnThreadProcedure()
+        {
+            
         }
     }
 }

@@ -22,6 +22,8 @@ namespace kddNeural
         private void SetElementsInactive()
         {
             loadLearnFileButton.Enabled = false;
+            testLineTextBox.Enabled = false;
+            testLineLabel.Enabled = false;
             twoTypesRadioButton.Enabled = false;
             loadTestFileButton .Enabled = false;
             generalTypesRadioButton.Enabled = false;
@@ -43,6 +45,8 @@ namespace kddNeural
         {
             loadLearnFileButton.Enabled = true;
             twoTypesRadioButton.Enabled = true;
+            testLineTextBox.Enabled = true;
+            testLineLabel.Enabled = true;
             loadTestFileButton.Enabled = true;
             generalTypesRadioButton.Enabled = true;
             allTypesRadioButton.Enabled = true;
@@ -77,11 +81,18 @@ namespace kddNeural
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            if (_myNetwork != null)
+            try
             {
-                _myNetwork.Active = false;
-                _myNetwork.Cancel();
-                SetElementsActive();
+                if (_myNetwork != null)
+                {
+                    _myNetwork.Active = false;
+                    _myNetwork.Cancel();
+                    SetElementsActive();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
