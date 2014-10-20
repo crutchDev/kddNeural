@@ -46,6 +46,7 @@
             this.testLineLabel = new System.Windows.Forms.Label();
             this.testLineTextBox = new System.Windows.Forms.TextBox();
             this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.learningWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // loadTestFileButton
@@ -67,6 +68,7 @@
             // 
             this.twoTypesRadioButton.AutoSize = true;
             this.twoTypesRadioButton.BackColor = System.Drawing.SystemColors.Control;
+            this.twoTypesRadioButton.Checked = true;
             this.twoTypesRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.twoTypesRadioButton.FlatAppearance.BorderSize = 2;
             this.twoTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -141,6 +143,7 @@
             // cancelButton
             // 
             this.cancelButton.BackColor = System.Drawing.SystemColors.Window;
+            this.cancelButton.Enabled = false;
             this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cancelButton.FlatAppearance.BorderSize = 2;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -183,6 +186,7 @@
             this.fromLineTextBox.Name = "fromLineTextBox";
             this.fromLineTextBox.Size = new System.Drawing.Size(59, 20);
             this.fromLineTextBox.TabIndex = 9;
+            this.fromLineTextBox.Text = "45000";
             // 
             // lineCountTextBox
             // 
@@ -191,6 +195,7 @@
             this.lineCountTextBox.Name = "lineCountTextBox";
             this.lineCountTextBox.Size = new System.Drawing.Size(59, 20);
             this.lineCountTextBox.TabIndex = 10;
+            this.lineCountTextBox.Text = "15000";
             // 
             // fromLineLabel
             // 
@@ -231,6 +236,7 @@
             this.learnFileTextBox.Name = "learnFileTextBox";
             this.learnFileTextBox.Size = new System.Drawing.Size(269, 20);
             this.learnFileTextBox.TabIndex = 14;
+            this.learnFileTextBox.Text = "C:\\Users\\Dasd\\Desktop\\kddcup.data_10_percent_corrected";
             // 
             // testLineLabel
             // 
@@ -254,6 +260,12 @@
             // _openFileDialog
             // 
             this._openFileDialog.FileName = "openFileDialog";
+            // 
+            // learningWorker
+            // 
+            this.learningWorker.WorkerSupportsCancellation = true;
+            this.learningWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.learningWorker_DoWork);
+            this.learningWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.learningWorker_RunWorkerCompleted);
             // 
             // MainForm
             // 
@@ -306,6 +318,7 @@
         private System.Windows.Forms.Label testLineLabel;
         private System.Windows.Forms.TextBox testLineTextBox;
         private System.Windows.Forms.OpenFileDialog _openFileDialog;
+        private System.ComponentModel.BackgroundWorker learningWorker;
     }
 }
 

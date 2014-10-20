@@ -68,9 +68,19 @@ namespace kddNeural
             {
                 var fromLine = long.Parse(fromLineTextBox.Text);
                 var lineCount = long.Parse(lineCountTextBox.Text);
-                _myNetwork = new KddNetwork(learnFileTextBox.Text, fromLine, lineCount);
+                Type outputVariant;
+                
+                if (twoTypesRadioButton.Checked) 
+                    outputVariant = typeof(GenericConnectionType);
+                else if (generalTypesRadioButton.Checked)
+                    outputVariant = typeof(MiddleSpecificConnectionType);
+                else if (allTypesRadioButton.Checked)
+                    outputVariant = typeof(SpecificConnectionType);
+                else throw new Exception("Didnt choose output type");
+
+                _myNetwork = new KddNetwork(learnFileTextBox.Text, fromLine, lineCount, outputVariant);
                 SetElementsInactive();
-                _myNetwork.StartLearning();
+                learningWorker.RunWorkerAsync();
             }
             catch (Exception ex)
             {
@@ -85,9 +95,7 @@ namespace kddNeural
             {
                 if (_myNetwork != null)
                 {
-                    _myNetwork.Active = false;
-                    _myNetwork.Cancel();
-                    SetElementsActive();
+                    learningWorker.CancelAsync();
                 }
             }
             catch (Exception ex)
@@ -115,6 +123,16 @@ namespace kddNeural
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void learningWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            _myNetwork.StartLearning();
+        }
+
+        private void learningWorker_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            SetElementsActive();
         }
     }
 }
