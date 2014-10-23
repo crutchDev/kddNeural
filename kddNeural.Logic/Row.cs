@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
-namespace kddNeural
+namespace kddNeural.Logic
 {
     //public enum Protocol
     //{
@@ -145,6 +146,33 @@ namespace kddNeural
         public double[] AsIputArray()
         {
             return InputList.ToArray();
+        }
+
+        public static Row[] LoadLinesFromFile(string filePath, long fromLine, long lineCount)
+        {
+            using (var f = new StreamReader(filePath))
+            {
+                //skip to needed line
+                for (int i = 0; i < fromLine; i++) f.ReadLine();
+
+                var rows = new Row[lineCount];
+                //read lines to string
+                for (int i = 0; i < lineCount; i++)
+                {
+                    var readLine = f.ReadLine();
+                    if (readLine != null)
+                    {
+                        var readString = readLine.Split(',');
+                        rows[i] = new Row(readString);
+                    }
+                    else
+                    {
+                        throw new FileLoadException("File is too short!");
+                    }
+                }
+
+                return rows;
+            }
         }
     }
 }
