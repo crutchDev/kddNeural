@@ -41,8 +41,6 @@ namespace kddNeural.Logic
     {
         public Row(string[] row)
         {
-            //Output = GetEnumFromString<Protocol>(row[1]);
-            //Input = GetEnumFromString<Protocol>(row[2]);
             InputList = new List<double>
             {
                 double.Parse(row[0])
@@ -78,7 +76,7 @@ namespace kddNeural.Logic
         public static Dictionary<string, int> Protocols = new Dictionary<string, int>();
         public static Dictionary<string, int> Services = new Dictionary<string, int>();
         public static Dictionary<string, int> RstBytes = new Dictionary<string, int>();
-        public readonly IEnumerable<double> InputList; //24 - 30, 33-40
+        public readonly IEnumerable<double> InputList;
 
 
         public GenericConnectionType GenConType;
@@ -86,7 +84,7 @@ namespace kddNeural.Logic
         public SpecificConnectionType ConType;
 
         private static readonly Dictionary<SpecificConnectionType, MiddleSpecificConnectionType> SpecificToMiddleConnectionTypes =
-            new Dictionary<SpecificConnectionType, MiddleSpecificConnectionType>()
+            new Dictionary<SpecificConnectionType, MiddleSpecificConnectionType>
             {
                 {SpecificConnectionType.normal,          MiddleSpecificConnectionType.normal},
                 {SpecificConnectionType.back,            MiddleSpecificConnectionType.dos},
@@ -139,7 +137,7 @@ namespace kddNeural.Logic
                 return (double)MidConType;
             if (learnType == typeof(SpecificConnectionType))
                 return (double)ConType;
-            
+
             throw new Exception("Wrong output type");
         }
 

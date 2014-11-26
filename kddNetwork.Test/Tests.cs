@@ -7,9 +7,9 @@ namespace kddNetwork.Test
     [TestClass]
     public class Tests
     {
-        private const int LineCount = 15000;
+        private const int LineCount = 40000;
         private const int StartLine = 0;
-        private readonly string filename = @"C:\Users\Dasd\Desktop\kddcup.data_10_percent_corrected";
+        private readonly string filename = @"Z:\Users\aleksejfilobok\kddNeural\kddcup.data_10_percent_corrected";
         [TestMethod]
         public void TestGenericOutput()
         {
@@ -21,7 +21,7 @@ namespace kddNetwork.Test
 
             int count = 0;
             int errors = 0;
-            int notNormal = 0;
+            //int notNormal = 0;
             foreach (var r in testRows)
             {
                 var output = network.TestInput(r.AsIputArray());
@@ -33,13 +33,13 @@ namespace kddNetwork.Test
                 else
                 {
                     errors++;
-                }
+                }/*
                 if (r.GenConType != GenericConnectionType.normal)
                 {
                     notNormal++;
-                }
+                }*/
             }
-            
+            int a = 15;
         }
 
         [TestMethod]

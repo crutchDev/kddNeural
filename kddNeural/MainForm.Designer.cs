@@ -47,6 +47,7 @@
             this.testLineTextBox = new System.Windows.Forms.TextBox();
             this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.learningWorker = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loadTestFileButton
@@ -60,7 +61,7 @@
             this.loadTestFileButton.Name = "loadTestFileButton";
             this.loadTestFileButton.Size = new System.Drawing.Size(137, 31);
             this.loadTestFileButton.TabIndex = 0;
-            this.loadTestFileButton.Text = "Load test file";
+            this.loadTestFileButton.Text = "Загрузить файл для теста";
             this.loadTestFileButton.UseVisualStyleBackColor = false;
             this.loadTestFileButton.Click += new System.EventHandler(this.loadTestFileButton_Click);
             // 
@@ -74,10 +75,10 @@
             this.twoTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.twoTypesRadioButton.Location = new System.Drawing.Point(12, 72);
             this.twoTypesRadioButton.Name = "twoTypesRadioButton";
-            this.twoTypesRadioButton.Size = new System.Drawing.Size(175, 19);
+            this.twoTypesRadioButton.Size = new System.Drawing.Size(159, 19);
             this.twoTypesRadioButton.TabIndex = 1;
             this.twoTypesRadioButton.TabStop = true;
-            this.twoTypesRadioButton.Text = "2 types (normal\\not normal)";
+            this.twoTypesRadioButton.Text = "2 типа(атака/не атака)";
             this.twoTypesRadioButton.UseVisualStyleBackColor = false;
             // 
             // generalTypesRadioButton
@@ -89,10 +90,10 @@
             this.generalTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.generalTypesRadioButton.Location = new System.Drawing.Point(12, 101);
             this.generalTypesRadioButton.Name = "generalTypesRadioButton";
-            this.generalTypesRadioButton.Size = new System.Drawing.Size(159, 19);
+            this.generalTypesRadioButton.Size = new System.Drawing.Size(164, 19);
             this.generalTypesRadioButton.TabIndex = 2;
             this.generalTypesRadioButton.TabStop = true;
-            this.generalTypesRadioButton.Text = "Generic types of hazards";
+            this.generalTypesRadioButton.Text = "Обобщенные типы атак";
             this.generalTypesRadioButton.UseVisualStyleBackColor = false;
             // 
             // allTypesRadioButton
@@ -104,10 +105,10 @@
             this.allTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.allTypesRadioButton.Location = new System.Drawing.Point(12, 130);
             this.allTypesRadioButton.Name = "allTypesRadioButton";
-            this.allTypesRadioButton.Size = new System.Drawing.Size(129, 19);
+            this.allTypesRadioButton.Size = new System.Drawing.Size(109, 19);
             this.allTypesRadioButton.TabIndex = 3;
             this.allTypesRadioButton.TabStop = true;
-            this.allTypesRadioButton.Text = "All types of hazards";
+            this.allTypesRadioButton.Text = "Все виды атак";
             this.allTypesRadioButton.UseVisualStyleBackColor = false;
             // 
             // startLearningButton
@@ -121,7 +122,7 @@
             this.startLearningButton.Name = "startLearningButton";
             this.startLearningButton.Size = new System.Drawing.Size(78, 31);
             this.startLearningButton.TabIndex = 4;
-            this.startLearningButton.Text = "Learn";
+            this.startLearningButton.Text = "Обучить";
             this.startLearningButton.UseVisualStyleBackColor = false;
             this.startLearningButton.Click += new System.EventHandler(this.startLearningButton_Click);
             // 
@@ -136,7 +137,7 @@
             this.testButton.Name = "testButton";
             this.testButton.Size = new System.Drawing.Size(74, 31);
             this.testButton.TabIndex = 5;
-            this.testButton.Text = "Test";
+            this.testButton.Text = "Тест";
             this.testButton.UseVisualStyleBackColor = false;
             this.testButton.Click += new System.EventHandler(this.testButton_Click);
             // 
@@ -152,7 +153,7 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 31);
             this.cancelButton.TabIndex = 6;
-            this.cancelButton.Text = "Cancel";
+            this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -175,14 +176,14 @@
             this.loadLearnFileButton.Name = "loadLearnFileButton";
             this.loadLearnFileButton.Size = new System.Drawing.Size(102, 31);
             this.loadLearnFileButton.TabIndex = 8;
-            this.loadLearnFileButton.Text = "Load learn file";
+            this.loadLearnFileButton.Text = "Загрузить файл для обучения";
             this.loadLearnFileButton.UseVisualStyleBackColor = false;
             this.loadLearnFileButton.Click += new System.EventHandler(this.loadLearnFileButton_Click);
             // 
             // fromLineTextBox
             // 
             this.fromLineTextBox.BackColor = System.Drawing.Color.White;
-            this.fromLineTextBox.Location = new System.Drawing.Point(134, 7);
+            this.fromLineTextBox.Location = new System.Drawing.Point(181, 9);
             this.fromLineTextBox.Name = "fromLineTextBox";
             this.fromLineTextBox.Size = new System.Drawing.Size(59, 20);
             this.fromLineTextBox.TabIndex = 9;
@@ -191,7 +192,7 @@
             // lineCountTextBox
             // 
             this.lineCountTextBox.BackColor = System.Drawing.Color.White;
-            this.lineCountTextBox.Location = new System.Drawing.Point(134, 46);
+            this.lineCountTextBox.Location = new System.Drawing.Point(181, 47);
             this.lineCountTextBox.Name = "lineCountTextBox";
             this.lineCountTextBox.Size = new System.Drawing.Size(59, 20);
             this.lineCountTextBox.TabIndex = 10;
@@ -202,11 +203,11 @@
             this.fromLineLabel.AutoSize = true;
             this.fromLineLabel.BackColor = System.Drawing.SystemColors.Control;
             this.fromLineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fromLineLabel.Location = new System.Drawing.Point(54, 9);
+            this.fromLineLabel.Location = new System.Drawing.Point(12, 9);
             this.fromLineLabel.Name = "fromLineLabel";
-            this.fromLineLabel.Size = new System.Drawing.Size(62, 15);
+            this.fromLineLabel.Size = new System.Drawing.Size(143, 15);
             this.fromLineLabel.TabIndex = 11;
-            this.fromLineLabel.Text = "From line:";
+            this.fromLineLabel.Text = "С какой строки обучать";
             // 
             // toLineLabel
             // 
@@ -215,9 +216,9 @@
             this.toLineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toLineLabel.Location = new System.Drawing.Point(12, 47);
             this.toLineLabel.Name = "toLineLabel";
-            this.toLineLabel.Size = new System.Drawing.Size(94, 15);
+            this.toLineLabel.Size = new System.Drawing.Size(163, 15);
             this.toLineLabel.TabIndex = 12;
-            this.toLineLabel.Text = "Amount of lines:";
+            this.toLineLabel.Text = "Кол-во строк для обучения";
             // 
             // resultLabel
             // 
@@ -227,7 +228,7 @@
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(240, 23);
             this.resultLabel.TabIndex = 13;
-            this.resultLabel.Text = "Result:";
+            this.resultLabel.Text = "Результат:";
             // 
             // learnFileTextBox
             // 
@@ -245,14 +246,14 @@
             this.testLineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.testLineLabel.Location = new System.Drawing.Point(330, 8);
             this.testLineLabel.Name = "testLineLabel";
-            this.testLineLabel.Size = new System.Drawing.Size(56, 15);
+            this.testLineLabel.Size = new System.Drawing.Size(156, 15);
             this.testLineLabel.TabIndex = 16;
-            this.testLineLabel.Text = "Test line:";
+            this.testLineLabel.Text = "Проверить строку номер:";
             // 
             // testLineTextBox
             // 
             this.testLineTextBox.BackColor = System.Drawing.Color.White;
-            this.testLineTextBox.Location = new System.Drawing.Point(409, 8);
+            this.testLineTextBox.Location = new System.Drawing.Point(489, 7);
             this.testLineTextBox.Name = "testLineTextBox";
             this.testLineTextBox.Size = new System.Drawing.Size(59, 20);
             this.testLineTextBox.TabIndex = 15;
@@ -267,12 +268,21 @@
             this.learningWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.learningWorker_DoWork);
             this.learningWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.learningWorker_RunWorkerCompleted);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(369, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 17;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(635, 250);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.testLineLabel);
             this.Controls.Add(this.testLineTextBox);
             this.Controls.Add(this.learnFileTextBox);
@@ -319,6 +329,7 @@
         private System.Windows.Forms.TextBox testLineTextBox;
         private System.Windows.Forms.OpenFileDialog _openFileDialog;
         private System.ComponentModel.BackgroundWorker learningWorker;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -115,10 +115,19 @@ namespace kddNeural
 
         private void testButton_Click(object sender, EventArgs e)
         {
+            //Random rand = new Random();
             try
             {
+                //double result = Convert.ToDouble(rand.Next(9000,9999))/10000;
                 var testLine = long.Parse(testLineTextBox.Text);
-                _myNetwork.TestInput(testLine, testFileTextBox.Text);
+                this.label1.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text).ToString();
+                if(_myNetwork.TestInput(testLine, testFileTextBox.Text)<0.9700){
+                    this.resultLabel.Text =  "Результат: Не атака"; 
+                }
+                else
+                {
+                    this.resultLabel.Text = "Результат: Атака";
+                }
             }
             catch (Exception ex)
             {
