@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge">
-      <HintPath>..\AForge\Release\AForge.dll</HintPath>
+      <HintPath>..\AForge\AForge.dll</HintPath>
     </Reference>
     <Reference Include="AForge.Neuro">
-      <HintPath>..\AForge\Release\AForge.Neuro.dll</HintPath>
+      <HintPath>..\AForge\AForge.Neuro.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KddNetwork.cs" />
+    <Compile Include="Pnn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Row.cs" />
   </ItemGroup>

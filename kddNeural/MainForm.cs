@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using kddNeural.Logic;
 
@@ -92,16 +94,10 @@ namespace kddNeural
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            try
+            using (var f = File.OpenWrite("savedInstance.bat"))
             {
-                if (_myNetwork != null)
-                {
-                    learningWorker.CancelAsync();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                var bin = new BinaryFormatter();
+                bin.Serialize(f, _myNetwork.PnnNetwork);
             }
         }
 
@@ -120,14 +116,10 @@ namespace kddNeural
             {
                 //double result = Convert.ToDouble(rand.Next(9000,9999))/10000;
                 var testLine = long.Parse(testLineTextBox.Text);
-                this.label1.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text).ToString();
-                if(_myNetwork.TestInput(testLine, testFileTextBox.Text)<0.9700){
-                    this.resultLabel.Text =  "Результат: Не атака"; 
-                }
-                else
-                {
-                    this.resultLabel.Text = "Результат: Атака";
-                }
+                label1.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text).ToString();
+                resultLabel.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text)<0.9700 ? 
+                    "Результат: Не атака" 
+                    : "Результат: Атака";
             }
             catch (Exception ex)
             {
@@ -143,6 +135,16 @@ namespace kddNeural
         private void learningWorker_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             SetElementsActive();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var f = File.OpenRead("savedInstance.bat"))
+            {
+                var bin = new BinaryFormatter();
+                var pnn = (Pnn) bin.Deserialize(f);
+                _myNetwork.PnnNetwork = pnn;
+            }
         }
     }
 }

@@ -55,8 +55,16 @@ namespace kddNeural.Logic
 
             GenConType = GetGenericConnectionType(conType);
             MidConType = GetMiddleSpecificConnectionType(conType);
-            ConType = GetEnumFromString<SpecificConnectionType>(conType);
-
+            try
+            {
+                ConType = GetEnumFromString<SpecificConnectionType>(conType);
+            }
+            catch (Exception)
+            {
+                ConType = null;
+                GenConType = null;
+                MidConType = null;
+            }
 
             for (int i = 0; i < row.Length - 5; i++)
             {
@@ -79,9 +87,9 @@ namespace kddNeural.Logic
         public readonly IEnumerable<double> InputList;
 
 
-        public GenericConnectionType GenConType;
-        public MiddleSpecificConnectionType MidConType;
-        public SpecificConnectionType ConType;
+        public GenericConnectionType? GenConType;
+        public MiddleSpecificConnectionType? MidConType;
+        public SpecificConnectionType? ConType;
 
         private static readonly Dictionary<SpecificConnectionType, MiddleSpecificConnectionType> SpecificToMiddleConnectionTypes =
             new Dictionary<SpecificConnectionType, MiddleSpecificConnectionType>
@@ -132,11 +140,11 @@ namespace kddNeural.Logic
         public double ResType(Type learnType)
         {
             if (learnType == typeof(GenericConnectionType))
-                return (double)GenConType;
+                if (GenConType != null) return (double)GenConType;
             if (learnType == typeof(MiddleSpecificConnectionType))
-                return (double)MidConType;
+                if (MidConType != null) return (double)MidConType;
             if (learnType == typeof(SpecificConnectionType))
-                return (double)ConType;
+                if (ConType != null) return (double)ConType;
 
             throw new Exception("Wrong output type");
         }
