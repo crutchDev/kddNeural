@@ -48,8 +48,8 @@
             this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.learningWorker = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this._saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // loadTestFileButton
@@ -278,19 +278,9 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 17;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Window;
-            this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -310,7 +300,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(635, 250);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.testLineLabel);
             this.Controls.Add(this.testLineTextBox);
@@ -359,8 +348,8 @@
         private System.Windows.Forms.OpenFileDialog _openFileDialog;
         private System.ComponentModel.BackgroundWorker learningWorker;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.SaveFileDialog _saveFileDialog;
     }
 }
 

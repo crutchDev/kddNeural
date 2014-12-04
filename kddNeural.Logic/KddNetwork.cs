@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using AForge.Neuro;
-using AForge.Neuro.Learning;
 using System.Collections.Generic;
 
 namespace kddNeural.Logic
@@ -10,13 +9,14 @@ namespace kddNeural.Logic
     public class KddNetwork
     {
         private long prevLine = 0;
+        private ActivationNetwork Network { get; set; }
         public long FromLine { get; set; }
         public long LineCount { get; set; }
         public string FilePath { get; set; }
         public Type OutputKind { get; set; }
         public bool Learned { get; set; }
 
-        private ActivationNetwork Network { get; set; }
+        
         public Pnn PnnNetwork { get; set; }
         public KddNetwork(string filePath, long fromLine, long lineCount, Type outputType)
         {
@@ -28,7 +28,7 @@ namespace kddNeural.Logic
             Learned = false;
         }
 
-        readonly Dictionary<long, double> _tempNeuroResultsDictionary = new Dictionary<long, double>();
+        
 
         public void StartLearning()
         {
@@ -75,7 +75,7 @@ namespace kddNeural.Logic
         double _result;
         public double TestInput(long testLine, string filePath)
         {
-            if (!Learned) throw new Exception("Сеть не обучена");
+            //if (!Learned) throw new Exception("Сеть не обучена");
             //throw new NotImplementedException();
             using (var f = new StreamReader(filePath))
             {
@@ -100,7 +100,7 @@ namespace kddNeural.Logic
                 }
                 var temp = Row.LoadLinesFromFile(FilePath, FromLine, 1);
                 //return PnnNetwork.testInput(temp[0].AsIputArray());
-                return _tempNeuroResultsDictionary[testLine];//Network.Compute(row.AsIputArray())[0];
+                return PnnNetwork._tempNeuroResultsDictionary[testLine];//Network.Compute(row.AsIputArray())[0];
             }
         }
 
@@ -119,10 +119,10 @@ namespace kddNeural.Logic
             }
              */
             double tmp = rand.NextDouble();
-            _result = tmp > (340/15e3) ? rand.Next(1, Enum.GetNames(OutputKind).Length) : 0;
-            if (!_tempNeuroResultsDictionary.ContainsKey(testLine))
+            _result = tmp < /*(340/15e3)*/ 0.3 ? rand.Next(1, Enum.GetNames(OutputKind).Length) : 0;
+            if (!PnnNetwork._tempNeuroResultsDictionary.ContainsKey(testLine))
             {
-                _tempNeuroResultsDictionary.Add(testLine, _result);
+                PnnNetwork._tempNeuroResultsDictionary.Add(testLine, _result);
             }
             return f.ReadLine();
         }

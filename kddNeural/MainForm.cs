@@ -28,17 +28,17 @@ namespace kddNeural
             testLineTextBox.Enabled = false;
             testLineLabel.Enabled = false;
             twoTypesRadioButton.Enabled = false;
-            loadTestFileButton .Enabled = false;
+            loadTestFileButton.Enabled = false;
             generalTypesRadioButton.Enabled = false;
             allTypesRadioButton.Enabled = false;
             startLearningButton.Enabled = false;
             testButton.Enabled = false;
             testFileTextBox.Enabled = false;
-            fromLineTextBox .Enabled = false;
+            fromLineTextBox.Enabled = false;
             lineCountTextBox.Enabled = false;
             fromLineLabel.Enabled = false;
-            toLineLabel .Enabled = false;
-            resultLabel .Enabled = false;
+            toLineLabel.Enabled = false;
+            resultLabel.Enabled = false;
             learnFileTextBox.Enabled = false;
             cancelButton.Enabled = true;
 
@@ -62,7 +62,8 @@ namespace kddNeural
             toLineLabel.Enabled = true;
             resultLabel.Enabled = true;
             learnFileTextBox.Enabled = true;
-            cancelButton.Enabled = false;
+            cancelButton.Enabled = true;
+            button2.Enabled = true;
         }
 
         private void startLearningButton_Click(object sender, EventArgs e)
@@ -72,8 +73,8 @@ namespace kddNeural
                 var fromLine = long.Parse(fromLineTextBox.Text);
                 var lineCount = long.Parse(lineCountTextBox.Text);
                 Type outputVariant;
-                
-                if (twoTypesRadioButton.Checked) 
+
+                if (twoTypesRadioButton.Checked)
                     outputVariant = typeof(GenericConnectionType);
                 else if (generalTypesRadioButton.Checked)
                     outputVariant = typeof(MiddleSpecificConnectionType);
@@ -94,10 +95,13 @@ namespace kddNeural
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            using (var f = File.OpenWrite("savedInstance.bat"))
+            if (_saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                var bin = new BinaryFormatter();
-                bin.Serialize(f, _myNetwork.PnnNetwork);
+                using (var f = File.OpenWrite(_saveFileDialog.FileName))
+                {
+                    var bin = new BinaryFormatter();
+                    bin.Serialize(f, _myNetwork.PnnNetwork);
+                }
             }
         }
 
@@ -117,9 +121,10 @@ namespace kddNeural
                 //double result = Convert.ToDouble(rand.Next(9000,9999))/10000;
                 var testLine = long.Parse(testLineTextBox.Text);
                 label1.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text).ToString();
-                resultLabel.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text)<0.9700 ? 
-                    "Результат: Не атака" 
+                /*resultLabel.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text) < 0.9700 ?
+                    "Результат: Не атака"
                     : "Результат: Атака";
+                */
             }
             catch (Exception ex)
             {
@@ -139,11 +144,37 @@ namespace kddNeural
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (var f = File.OpenRead("savedInstance.bat"))
+            if (_openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                var bin = new BinaryFormatter();
-                var pnn = (Pnn) bin.Deserialize(f);
-                _myNetwork.PnnNetwork = pnn;
+                using (var f = File.OpenRead(_openFileDialog.FileName))
+                {
+                    var bin = new BinaryFormatter();
+                    var pnn = (Pnn) bin.Deserialize(f);
+                    if (_myNetwork == null)
+                    {
+                        try
+                        {
+                            var fromLine = long.Parse(fromLineTextBox.Text);
+                            var lineCount = long.Parse(lineCountTextBox.Text);
+                            Type outputVariant;
+
+                            if (twoTypesRadioButton.Checked)
+                                outputVariant = typeof(GenericConnectionType);
+                            else if (generalTypesRadioButton.Checked)
+                                outputVariant = typeof(MiddleSpecificConnectionType);
+                            else if (allTypesRadioButton.Checked)
+                                outputVariant = typeof(SpecificConnectionType);
+                            else throw new Exception("Didnt choose output type");
+
+                            _myNetwork = new KddNetwork(learnFileTextBox.Text, fromLine, lineCount, outputVariant);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        } 
+                    }
+                    _myNetwork.PnnNetwork = pnn;
+                }
             }
         }
     }

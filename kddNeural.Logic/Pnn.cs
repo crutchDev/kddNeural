@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace kddNeural.Logic
 {
+    [Serializable]
     public class Pnn
     {
         private Neuron[][] neurons;
         private Type outType;
         private double[] resCounts;
+        
         public Pnn(Type outputType)
         {
             neurons = new Neuron[2][];
@@ -54,7 +56,9 @@ namespace kddNeural.Logic
 
             return maxIndex;
         }
+        public readonly Dictionary<long, double> _tempNeuroResultsDictionary = new Dictionary<long, double>();
     }
+
     [Serializable]
     internal class Neuron
     {
