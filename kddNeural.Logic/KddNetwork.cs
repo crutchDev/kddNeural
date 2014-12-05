@@ -49,7 +49,7 @@ namespace kddNeural.Logic
 
             PnnNetwork = new Pnn(OutputKind);
 
-            PnnNetwork.runEpoch(rows);
+            PnnNetwork.RunEpoch(rows);
 
             var input = new double[rows.Length][];
             var output = new double[rows.Length][];
@@ -96,18 +96,24 @@ namespace kddNeural.Logic
                 }
                 else
                 {
-                    throw new FileLoadException("File is too short!");
+                    throw new FileLoadException("Слишком короткий файл");
                 }
                 var temp = Row.LoadLinesFromFile(FilePath, FromLine, 1);
-                //return PnnNetwork.testInput(temp[0].AsIputArray());
-                return PnnNetwork._tempNeuroResultsDictionary[testLine];//Network.Compute(row.AsIputArray())[0];
+                //return PnnNetwork.TempNeuroResultsDictionary[testLine];//Network.Compute(row.AsIputArray())[0];
+                return PnnNetwork.TestInput(temp[0].AsIputArray());
             }
+        }
+
+        public double TestInput(double[] input)
+        {
+            var res = Network.Compute(input);
+            return res[0];
         }
 
         private string seekLine(long testLine, StreamReader f)
         {
             for (int i = 0; i < testLine; i++) f.ReadLine();
-            var rand = new Random();
+            
             /*
             if (testLine < 45000)
             {
@@ -117,20 +123,18 @@ namespace kddNeural.Logic
             {
                 _result = rand.Next(9600, 9999)/10000.0;
             }
+            
              */
+
+            var rand = new Random();
             double tmp = rand.NextDouble();
             _result = tmp < /*(340/15e3)*/ 0.3 ? rand.Next(1, Enum.GetNames(OutputKind).Length) : 0;
-            if (!PnnNetwork._tempNeuroResultsDictionary.ContainsKey(testLine))
+            if (!PnnNetwork.TempNeuroResultsDictionary.ContainsKey(testLine))
             {
-                PnnNetwork._tempNeuroResultsDictionary.Add(testLine, _result);
+                PnnNetwork.TempNeuroResultsDictionary.Add(testLine, _result);
             }
             return f.ReadLine();
         }
 
-        public double TestInput(double[] input)
-        {
-            var res = Network.Compute(input);
-            return res[0];
-        }
     }
 }
