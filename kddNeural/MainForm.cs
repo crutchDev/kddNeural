@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Windows.Forms;
 using kddNeural.Logic;
 
@@ -115,16 +117,20 @@ namespace kddNeural
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            //Random rand = new Random();
             try
             {
-                //double result = Convert.ToDouble(rand.Next(9000,9999))/10000;
                 var testLine = long.Parse(testLineTextBox.Text);
-                label1.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text).ToString();
-                /*resultLabel.Text = _myNetwork.TestInput(testLine, testFileTextBox.Text) < 0.9700 ?
-                    "Результат: Не атака"
-                    : "Результат: Атака";
-                */
+                var output = _myNetwork.TestInput(testLine, testFileTextBox.Text);
+                var strBuilder = new StringBuilder();
+                var names = Enum.GetNames(_myNetwork.OutputKind);
+                strBuilder.AppendFormat("Max: {0}\n", output.Max());
+                for (int i = 0; i < output.Length; i++)
+                {
+                    strBuilder.AppendFormat("{0}:{1}\n",names[i], output[i]);
+                    
+                }
+
+                resultLabel.Text = strBuilder.ToString();
             }
             catch (Exception ex)
             {

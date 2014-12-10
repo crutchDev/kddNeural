@@ -91,7 +91,7 @@ namespace kddNeural.Logic
         public MiddleSpecificConnectionType? MidConType;
         public SpecificConnectionType? ConType;
 
-        private static readonly Dictionary<SpecificConnectionType, MiddleSpecificConnectionType> SpecificToMiddleConnectionTypes =
+        public static readonly Dictionary<SpecificConnectionType, MiddleSpecificConnectionType> SpecificToMiddleConnectionTypes =
             new Dictionary<SpecificConnectionType, MiddleSpecificConnectionType>
             {
                 {SpecificConnectionType.normal,          MiddleSpecificConnectionType.normal},

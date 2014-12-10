@@ -30,11 +30,10 @@ namespace kddNeural.Logic
                     Input = input[i].AsIputArray(),
                     Res = (int)input[i].ResType(_outType)
                 };
-                TempNeuroResultsDictionary[i] = _inputNeurons[i].Res;
                 _resCounts[_inputNeurons[i].Res]++;
             }
             var maxElems = new double[input[0].AsIputArray().Length];
-            var totalMax = _inputNeurons.Select(x => x.Input.Max()).Max();
+            //var totalMax = _inputNeurons.Select(x => x.Input.Max()).Max();
             for (int i = 0; i < maxElems.Length; i++)
             {
                 maxElems[i] = _inputNeurons.Select(x => x.Input[i]).Max();
@@ -70,7 +69,7 @@ namespace kddNeural.Logic
 
             return maxIndex;
         }
-        public readonly Dictionary<long, double> TempNeuroResultsDictionary = new Dictionary<long, double>();
+        public readonly Dictionary<string, double[]> TempNeuroResultsDictionary = new Dictionary<string, double[]>();
     }
 
     [Serializable]

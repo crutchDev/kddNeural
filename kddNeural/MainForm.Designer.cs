@@ -59,7 +59,7 @@
             this.loadTestFileButton.FlatAppearance.BorderSize = 2;
             this.loadTestFileButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.loadTestFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loadTestFileButton.Location = new System.Drawing.Point(331, 92);
+            this.loadTestFileButton.Location = new System.Drawing.Point(412, 60);
             this.loadTestFileButton.Name = "loadTestFileButton";
             this.loadTestFileButton.Size = new System.Drawing.Size(137, 31);
             this.loadTestFileButton.TabIndex = 0;
@@ -135,7 +135,7 @@
             this.testButton.FlatAppearance.BorderSize = 2;
             this.testButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.testButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.testButton.Location = new System.Drawing.Point(474, 92);
+            this.testButton.Location = new System.Drawing.Point(555, 60);
             this.testButton.Name = "testButton";
             this.testButton.Size = new System.Drawing.Size(74, 31);
             this.testButton.TabIndex = 5;
@@ -162,7 +162,7 @@
             // testFileTextBox
             // 
             this.testFileTextBox.BackColor = System.Drawing.Color.White;
-            this.testFileTextBox.Location = new System.Drawing.Point(333, 66);
+            this.testFileTextBox.Location = new System.Drawing.Point(414, 34);
             this.testFileTextBox.Name = "testFileTextBox";
             this.testFileTextBox.Size = new System.Drawing.Size(237, 20);
             this.testFileTextBox.TabIndex = 7;
@@ -224,11 +224,12 @@
             // 
             // resultLabel
             // 
+            this.resultLabel.AutoSize = true;
             this.resultLabel.BackColor = System.Drawing.SystemColors.Control;
             this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.resultLabel.Location = new System.Drawing.Point(330, 40);
+            this.resultLabel.Location = new System.Drawing.Point(409, 94);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(240, 23);
+            this.resultLabel.Size = new System.Drawing.Size(71, 15);
             this.resultLabel.TabIndex = 13;
             this.resultLabel.Text = "Результат:";
             // 
@@ -246,7 +247,7 @@
             this.testLineLabel.AutoSize = true;
             this.testLineLabel.BackColor = System.Drawing.SystemColors.Control;
             this.testLineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.testLineLabel.Location = new System.Drawing.Point(330, 8);
+            this.testLineLabel.Location = new System.Drawing.Point(409, 8);
             this.testLineLabel.Name = "testLineLabel";
             this.testLineLabel.Size = new System.Drawing.Size(156, 15);
             this.testLineLabel.TabIndex = 16;
@@ -255,7 +256,7 @@
             // testLineTextBox
             // 
             this.testLineTextBox.BackColor = System.Drawing.Color.White;
-            this.testLineTextBox.Location = new System.Drawing.Point(489, 7);
+            this.testLineTextBox.Location = new System.Drawing.Point(568, 7);
             this.testLineTextBox.Name = "testLineTextBox";
             this.testLineTextBox.Size = new System.Drawing.Size(59, 20);
             this.testLineTextBox.TabIndex = 15;
@@ -273,7 +274,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(369, 130);
+            this.label1.Location = new System.Drawing.Point(450, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 17;
@@ -298,7 +299,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(635, 250);
+            this.ClientSize = new System.Drawing.Size(783, 442);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.testLineLabel);
