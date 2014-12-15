@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Windows.Forms;
@@ -122,23 +123,15 @@ namespace kddNeural
                 var output = _myNetwork.TestInput(testLine, testFileTextBox.Text);
                 var strBuilder = new StringBuilder();
                 var names = Enum.GetNames(_myNetwork.OutputKind);
-                double max = output[0];
-                int index = 0;
-                for (int i = 0; i < names.Length; i++)
-                {
-                    if (max < output[i])
-                    {
-                        max = output[i];
-                        index = i;
-                    }
-                }
-                var name = names[index];
-                strBuilder.AppendFormat("Максимум: {0}, это {1}\n", max, name);
-                for (int i = 0; i < output.Length; i++)
-                {
-                    strBuilder.AppendFormat("{0}:{1}\n", names[i], output[i]);
+                var dict = names.Zip(output, (n, o) => new { n, o })
+                    .ToDictionary(i => i.n, i => i.o);
 
+
+                foreach (var pair in dict.OrderByDescending(x => x.Value))
+                {
+                    strBuilder.AppendFormat("{0}: {1}\n", pair.Key, pair.Value);
                 }
+
 
                 resultLabel.Text = strBuilder.ToString();
             }
