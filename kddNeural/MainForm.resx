@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="allTypesRadioButton.Text" xml:space="preserve">
+    <value>Все виды атак 
+   (normal, back, buffer_overflow, ftp_write, 
+    guess_passwd, imap, ipsweep, land,
+    loadmodule, multihop, neptune, nmap,
+    perl, phf, pod, portsweep,  rootkit, satan,
+    smurf, spy, teardrop, warezclient,
+    warezmaster )</value>
+  </data>
   <metadata name="_openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

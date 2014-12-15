@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.loadTestFileButton = new System.Windows.Forms.Button();
             this.twoTypesRadioButton = new System.Windows.Forms.RadioButton();
             this.generalTypesRadioButton = new System.Windows.Forms.RadioButton();
@@ -96,10 +97,10 @@
             this.generalTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.generalTypesRadioButton.Location = new System.Drawing.Point(12, 101);
             this.generalTypesRadioButton.Name = "generalTypesRadioButton";
-            this.generalTypesRadioButton.Size = new System.Drawing.Size(164, 19);
+            this.generalTypesRadioButton.Size = new System.Drawing.Size(325, 19);
             this.generalTypesRadioButton.TabIndex = 2;
             this.generalTypesRadioButton.TabStop = true;
-            this.generalTypesRadioButton.Text = "Обобщенные типы атак";
+            this.generalTypesRadioButton.Text = "Обобщенные типы атак ( normal, probe, u2r, r2l, dos)";
             this.generalTypesRadioButton.UseVisualStyleBackColor = false;
             // 
             // allTypesRadioButton
@@ -111,10 +112,10 @@
             this.allTypesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.allTypesRadioButton.Location = new System.Drawing.Point(12, 130);
             this.allTypesRadioButton.Name = "allTypesRadioButton";
-            this.allTypesRadioButton.Size = new System.Drawing.Size(109, 19);
+            this.allTypesRadioButton.Size = new System.Drawing.Size(256, 109);
             this.allTypesRadioButton.TabIndex = 3;
             this.allTypesRadioButton.TabStop = true;
-            this.allTypesRadioButton.Text = "Все виды атак";
+            this.allTypesRadioButton.Text = resources.GetString("allTypesRadioButton.Text");
             this.allTypesRadioButton.UseVisualStyleBackColor = false;
             // 
             // startLearningButton
@@ -124,7 +125,7 @@
             this.startLearningButton.FlatAppearance.BorderSize = 2;
             this.startLearningButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.startLearningButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.startLearningButton.Location = new System.Drawing.Point(12, 230);
+            this.startLearningButton.Location = new System.Drawing.Point(13, 311);
             this.startLearningButton.Name = "startLearningButton";
             this.startLearningButton.Size = new System.Drawing.Size(102, 31);
             this.startLearningButton.TabIndex = 4;
@@ -155,7 +156,7 @@
             this.cancelButton.FlatAppearance.BorderSize = 2;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelButton.Location = new System.Drawing.Point(12, 267);
+            this.cancelButton.Location = new System.Drawing.Point(13, 348);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(102, 31);
             this.cancelButton.TabIndex = 6;
@@ -178,7 +179,7 @@
             this.loadLearnFileButton.FlatAppearance.BorderSize = 2;
             this.loadLearnFileButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.loadLearnFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loadLearnFileButton.Location = new System.Drawing.Point(12, 193);
+            this.loadLearnFileButton.Location = new System.Drawing.Point(13, 274);
             this.loadLearnFileButton.Name = "loadLearnFileButton";
             this.loadLearnFileButton.Size = new System.Drawing.Size(102, 31);
             this.loadLearnFileButton.TabIndex = 8;
@@ -240,7 +241,7 @@
             // learnFileTextBox
             // 
             this.learnFileTextBox.BackColor = System.Drawing.Color.White;
-            this.learnFileTextBox.Location = new System.Drawing.Point(12, 167);
+            this.learnFileTextBox.Location = new System.Drawing.Point(13, 248);
             this.learnFileTextBox.Name = "learnFileTextBox";
             this.learnFileTextBox.Size = new System.Drawing.Size(269, 20);
             this.learnFileTextBox.TabIndex = 14;
@@ -290,7 +291,7 @@
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(12, 304);
+            this.button2.Location = new System.Drawing.Point(13, 385);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 31);
             this.button2.TabIndex = 19;
@@ -301,38 +302,39 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(120, 193);
+            this.label2.Location = new System.Drawing.Point(121, 274);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(278, 26);
             this.label2.TabIndex = 20;
-            this.label2.Text = "label2";
+            this.label2.Text = "Позволяет выбрать файл для обучения.\r\nФайл должен быть сформирован по образцу KDD" +
+    "99.";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(120, 230);
+            this.label3.Location = new System.Drawing.Point(121, 311);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(266, 13);
             this.label3.TabIndex = 21;
-            this.label3.Text = "label3";
+            this.label3.Text = "Обучить нейронную сеть для заданных типов атак.";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(120, 267);
+            this.label4.Location = new System.Drawing.Point(121, 348);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(236, 13);
             this.label4.TabIndex = 22;
-            this.label4.Text = "label4";
+            this.label4.Text = "Сохраняет текущую нейронную сеть на диск.";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(120, 304);
+            this.label5.Location = new System.Drawing.Point(121, 385);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(266, 26);
             this.label5.TabIndex = 23;
-            this.label5.Text = "label5";
+            this.label5.Text = "Позволяет загрузить ранее обученную нейронную \r\nсеть из файла.";
             // 
             // MainForm
             // 
