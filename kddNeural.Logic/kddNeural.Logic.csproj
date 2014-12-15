@@ -30,12 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <HintPath>..\AForge\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Neuro">
-      <HintPath>..\AForge\AForge.Neuro.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

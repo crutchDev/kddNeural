@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using AForge.Neuro;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -10,7 +9,6 @@ namespace kddNeural.Logic
     public class KddNetwork
     {
         private long prevLine = 0;
-        private ActivationNetwork Network { get; set; }
         public long FromLine { get; set; }
         public long LineCount { get; set; }
         public string FilePath { get; set; }
@@ -27,7 +25,7 @@ namespace kddNeural.Logic
             OutputTypesCount = Enum.GetNames(outputType).Length;
             OutputKind = outputType;
             Learned = false;
-            using (var f = File.OpenRead(@"shieeet"))
+            using (var f = File.OpenRead(@".settings"))
             {
                 var formatter = new BinaryFormatter();
                 cache = (Dictionary<string, string>)formatter.Deserialize(f);
@@ -108,12 +106,6 @@ namespace kddNeural.Logic
                 return PnnNetwork.TempNeuroResultsDictionary[line];//Network.Compute(row.AsIputArray())[0];
                 //return PnnNetwork.TestInput(temp[0].AsIputArray());
             }
-        }
-
-        public double TestInput(double[] input)
-        {
-            var res = Network.Compute(input);
-            return res[0];
         }
 
         public Dictionary<string, string> cache;

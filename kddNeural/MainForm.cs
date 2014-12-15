@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Windows.Forms;
@@ -123,11 +122,22 @@ namespace kddNeural
                 var output = _myNetwork.TestInput(testLine, testFileTextBox.Text);
                 var strBuilder = new StringBuilder();
                 var names = Enum.GetNames(_myNetwork.OutputKind);
-                strBuilder.AppendFormat("Max: {0}\n", output.Max());
+                double max = output[0];
+                int index = 0;
+                for (int i = 0; i < names.Length; i++)
+                {
+                    if (max < output[i])
+                    {
+                        max = output[i];
+                        index = i;
+                    }
+                }
+                var name = names[index];
+                strBuilder.AppendFormat("Максимум: {0}, это {1}\n", max, name);
                 for (int i = 0; i < output.Length; i++)
                 {
-                    strBuilder.AppendFormat("{0}:{1}\n",names[i], output[i]);
-                    
+                    strBuilder.AppendFormat("{0}:{1}\n", names[i], output[i]);
+
                 }
 
                 resultLabel.Text = strBuilder.ToString();
@@ -155,7 +165,7 @@ namespace kddNeural
                 using (var f = File.OpenRead(_openFileDialog.FileName))
                 {
                     var bin = new BinaryFormatter();
-                    var pnn = (Pnn) bin.Deserialize(f);
+                    var pnn = (Pnn)bin.Deserialize(f);
                     if (_myNetwork == null)
                     {
                         try
@@ -177,7 +187,7 @@ namespace kddNeural
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
-                        } 
+                        }
                     }
                     _myNetwork.PnnNetwork = pnn;
                 }
