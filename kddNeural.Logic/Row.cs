@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+
 namespace kddNeural.Logic
 {
     //public enum Protocol
@@ -39,8 +40,11 @@ namespace kddNeural.Logic
 
     public class Row
     {
-        public Row(string[] row)
+        public string Source { get; set; }
+        public string Res { get; set; }
+        public Row(string[] row, string source)
         {
+            Source = source;
             InputList = new List<double>
             {
                 double.Parse(row[0])
@@ -53,6 +57,8 @@ namespace kddNeural.Logic
             var conType = row[row.Length - 1]; //output
             conType = conType.Substring(0, conType.Length - 1); //ignore dot at the end
 
+            Res = conType + ".";
+
             GenConType = GetGenericConnectionType(conType);
             MidConType = GetMiddleSpecificConnectionType(conType);
             try
@@ -61,6 +67,7 @@ namespace kddNeural.Logic
             }
             catch (Exception)
             {
+                Res = null;
                 ConType = null;
                 GenConType = null;
                 MidConType = null;
@@ -169,7 +176,7 @@ namespace kddNeural.Logic
                     if (readLine != null)
                     {
                         var readString = readLine.Split(',');
-                        rows[i] = new Row(readString);
+                        rows[i] = new Row(readString, readLine);
                     }
                     else
                     {

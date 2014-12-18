@@ -194,7 +194,6 @@
             this.fromLineTextBox.Name = "fromLineTextBox";
             this.fromLineTextBox.Size = new System.Drawing.Size(59, 20);
             this.fromLineTextBox.TabIndex = 9;
-            this.fromLineTextBox.Text = "45000";
             // 
             // lineCountTextBox
             // 
@@ -203,7 +202,6 @@
             this.lineCountTextBox.Name = "lineCountTextBox";
             this.lineCountTextBox.Size = new System.Drawing.Size(59, 20);
             this.lineCountTextBox.TabIndex = 10;
-            this.lineCountTextBox.Text = "15000";
             // 
             // fromLineLabel
             // 
@@ -245,7 +243,6 @@
             this.learnFileTextBox.Name = "learnFileTextBox";
             this.learnFileTextBox.Size = new System.Drawing.Size(269, 20);
             this.learnFileTextBox.TabIndex = 14;
-            this.learnFileTextBox.Text = "C:\\Users\\Dasd\\Desktop\\kddcup.data_10_percent_corrected";
             // 
             // testLineLabel
             // 
@@ -367,7 +364,7 @@
             this.Controls.Add(this.loadTestFileButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
-            this.Text = "KDD Analyzer";
+            this.Text = "Анализатор базы KDD99";
             this.ResumeLayout(false);
             this.PerformLayout();
 

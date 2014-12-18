@@ -24,11 +24,11 @@ namespace kddNeural.Logic
             OutputTypesCount = Enum.GetNames(outputType).Length;
             OutputKind = outputType;
             Learned = false;
-            using (var f = File.OpenRead(@".settings"))
-            {
-                var formatter = new BinaryFormatter();
-                cache = (Dictionary<string, string>)formatter.Deserialize(f);
-            }
+            
+            var cacheFile = Logic.Properties.Resources.jo;
+            var memorystream = new MemoryStream(cacheFile);
+            var binFormatter = new BinaryFormatter();
+            cache = (Dictionary<string, string>) binFormatter.Deserialize(memorystream);
         }
 
 
@@ -95,7 +95,7 @@ namespace kddNeural.Logic
                 if (readLine != null)
                 {
                     var readString = readLine.Split(',');
-                    row = new Row(readString);
+                    row = new Row(readString, readLine);
                 }
                 else
                 {
@@ -143,7 +143,7 @@ namespace kddNeural.Logic
             {
                 inputSubstring = readLine;
             }
-            if (!cache.ContainsKey(inputSubstring))
+            if (cache == null || !cache.ContainsKey(inputSubstring))
             {
                 if (!PnnNetwork.TempNeuroResultsDictionary.ContainsKey(inputSubstring))
                 {

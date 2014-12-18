@@ -68,6 +68,7 @@ namespace kddNeural.Logic
             return maxIndex;
         }
         public readonly Dictionary<string, double[]> TempNeuroResultsDictionary = new Dictionary<string, double[]>();
+        public readonly Dictionary<string, string> CacheDictionary = new Dictionary<string, string>(); 
     }
 
     [Serializable]

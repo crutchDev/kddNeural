@@ -126,7 +126,7 @@ namespace kddNeural
                 var dict = names.Zip(output, (n, o) => new { n, o })
                     .ToDictionary(i => i.n, i => i.o);
 
-
+                strBuilder.AppendLine("Результат:");
                 foreach (var pair in dict.OrderByDescending(x => x.Value))
                 {
                     strBuilder.AppendFormat("{0}: {1}\n", pair.Key, pair.Value);
